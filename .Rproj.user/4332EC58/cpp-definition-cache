@@ -1,0 +1,35 @@
+[
+    {
+        "file": "/Users/xmengju/MyFPLM/src/huber.cpp",
+        "file_last_write": 1625955732.0,
+        "definitions": [
+            {
+                "usr": "c:@F@huber_weight#&1I#&1d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "huber_weight(const int &, const double &)",
+                "file": "/Users/xmengju/MyFPLM/src/huber.cpp",
+                "line": 9,
+                "column": 11
+            },
+            {
+                "usr": "c:@F@huber_rho#&1I#&1d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "huber_rho(const int &, const double &)",
+                "file": "/Users/xmengju/MyFPLM/src/huber.cpp",
+                "line": 23,
+                "column": 11
+            },
+            {
+                "usr": "c:@F@huber_estimates#&1I#S0_#&I#&1d#S2_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "huber_estimates(const int &, const int &, int &, const double &, const double &)",
+                "file": "/Users/xmengju/MyFPLM/src/huber.cpp",
+                "line": 37,
+                "column": 6
+            }
+        ]
+    }
+]
