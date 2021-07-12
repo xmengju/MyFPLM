@@ -25,6 +25,7 @@
 #' 
 #' @import fda robustbase
 #' @importFrom stats lm
+#' @export
 minimize <- function(y, x_coef, u, spl_kn, freq, fLoss, norder,
                      rob.control = lmrob.control(
                          trace.level = 0,
@@ -54,6 +55,7 @@ minimize <- function(y, x_coef, u, spl_kn, freq, fLoss, norder,
         stop("Invalid fLoss. Should be one of \'ls\' or \'huang\' or \'lmrob\' ")
     }
 
+    print(fLoss)
     ## Minimization menu
     switch(fLoss,
            ls = {
@@ -64,6 +66,7 @@ minimize <- function(y, x_coef, u, spl_kn, freq, fLoss, norder,
            },
            huang = {
                init <- lm(y ~ X - 1)$coef
+               print(init)
                fit <- huber_estimates(X, y, init, 1.345, 1e-8)
                cf <- as.vector(fit$param)
                ss <- 1
