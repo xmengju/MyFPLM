@@ -55,7 +55,6 @@ minimize <- function(y, x_coef, u, spl_kn, freq, fLoss, norder,
         stop("Invalid fLoss. Should be one of \'ls\' or \'huang\' or \'lmrob\' ")
     }
 
-    print(fLoss)
     ## Minimization menu
     switch(fLoss,
            ls = {
@@ -66,7 +65,7 @@ minimize <- function(y, x_coef, u, spl_kn, freq, fLoss, norder,
            },
            huang = {
                init <- lm(y ~ X - 1)$coef
-               print(init)
+               init[is.na(init) == TRUE] <- 0
                fit <- huber_estimates(X, y, init, 1.345, 1e-8)
                cf <- as.vector(fit$param)
                ss <- 1
