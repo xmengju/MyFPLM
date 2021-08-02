@@ -76,16 +76,18 @@ minimize <- function(y, x_coef, u, spl_kn, freq, fLoss, norder,
            lmrob = {
                fit <- lmrob(y ~ X - 1, control = rob.control)
                fit$coef[is.na(fit$coef) == TRUE] <- 0
-               if (fit$init.S$converged) {
+               #if (fit$init.S$converged) {
                    cf <- fit$coef
                    ss <- fit$scale
                    vv <- sum(Mpsi(fit$res / ss,
                                   cc = rob.control$tuning.psi,
                                   psi = rob.control$psi, deriv = -1
                                   ))
-               }else {
-                   stop("S-estimator did not converge.")
-               }
+               #}else {
+              #  print(fit$coef)
+              #  print("S-estimator did not converge.")
+                 
+              # }
            },
            stop("Invalid fLoss.")
            )
