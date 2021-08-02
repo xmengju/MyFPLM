@@ -47,6 +47,7 @@ FPLMBsplines <- function(y, x, u, t, range_freq = range_default,
             val <- fit$value
             scl <- fit$scale
             crt <- goodness(n, scl, val, spl, freq, criterion)
+
             if (crt < opt) {
                 opt <- crt
                 spl_opt <- spl
@@ -56,6 +57,8 @@ FPLMBsplines <- function(y, x, u, t, range_freq = range_default,
             if (trace) print(c("spl" = spl, "freq" = freq, "crit" = crt))
         }
     }
+    
+    print(c("optimal",   freq_opt))
 
     ## Best fit
     kns <- seq(min(u), max(u), length = spl_opt - norder + 2)

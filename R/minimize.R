@@ -70,9 +70,12 @@ minimize <- function(y, x_coef, u, spl_kn, freq, fLoss, norder,
                cf <- as.vector(fit$param)
                ss <- 1
                vv <- fit$value
+               print(init)
+               print(cf)
            },
            lmrob = {
                fit <- lmrob(y ~ X - 1, control = rob.control)
+               fit$coef[is.na(fit$coef) == TRUE] <- 0
                if (fit$init.S$converged) {
                    cf <- fit$coef
                    ss <- fit$scale
